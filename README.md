@@ -1,8 +1,8 @@
 # Basic Calculator
 
 Project by: Andres Mills Gallego
-[My GitHub](https://github.com/AndresMillsGallego)
-[My LinkedIn](https://www.linkedin.com/in/andres-mills-gallego/)
+- [My GitHub](https://github.com/AndresMillsGallego)
+- [My LinkedIn](https://www.linkedin.com/in/andres-mills-gallego/)
 
 ## Overview
 
@@ -16,6 +16,7 @@ Project by: Andres Mills Gallego
 - [React](https://reactjs.org/)
 - [React-Bootstrap](https://react-bootstrap.github.io/)
 - [Bootstrap](https://getbootstrap.com/)
+- [Font Awesome](https://fontawesome.com/)
 
 ## How To Use
 
@@ -31,4 +32,17 @@ Project by: Andres Mills Gallego
   >`npm i`
 
 4. Then you are good to go! 
+
+## Versions
+
+- v1
+  - Basic functionality is there for simple single step arithmatic
+  - The main styling is done with a mix of Bootstrap and CSS
+  - Links added to footer
+
+- v2
+  - Adjusted the color palatte
+  - Added a top row of additional buttons - `.` `(` `)` `M`
+  - Added `JS` to include functionality for the `.` button
+  - Disabled the other 3 buttons
 

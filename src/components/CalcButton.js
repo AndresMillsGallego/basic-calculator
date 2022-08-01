@@ -1,6 +1,9 @@
 import { Button } from 'react-bootstrap'
 
-function CalcButton({value, buttonValue, setButtonValue, isAnswered, setIsAnswered, operatorClicked, setOperatorClicked}) {
+function CalcButton({value, buttonValue, setButtonValue, isAnswered, setIsAnswered, operatorClicked, setOperatorClicked, decimalClicked, setDecimalClicked}) {
+
+  // I need to make these functional
+  const buttonsToFix = ['(', ')', 'M']
 
   const operators = ['-', '+', '*', '/']
   let stringyAnswer;
@@ -35,13 +38,17 @@ function CalcButton({value, buttonValue, setButtonValue, isAnswered, setIsAnswer
   }
 
   function handleClick() {
-    if (isAnswered && typeof(value) === 'number') {
+    if (isAnswered && (typeof(value) === 'number' || value === '.')) {
       setButtonValue(value.toString());
       setIsAnswered(false);
       setOperatorClicked(false);
       return;
     }
-    if (buttonValue[0] === '0') {
+    if (value === '.') {
+      setButtonValue([...buttonValue, value]);
+      setDecimalClicked(true);
+    }
+    if (buttonValue[0] === '0' && buttonValue.length <=1) {
       if (typeof(value) !== 'number') {
         return;
       }
@@ -54,6 +61,7 @@ function CalcButton({value, buttonValue, setButtonValue, isAnswered, setIsAnswer
     } else if (value === '=') {
       calculate();
       setIsAnswered(true);
+      setDecimalClicked(false);
     } else {
       setButtonValue([...buttonValue, value.toString()]);
     }
@@ -69,7 +77,10 @@ function CalcButton({value, buttonValue, setButtonValue, isAnswered, setIsAnswer
       size='lg'
       onClick={() => handleClick()}
       disabled={
-        operators.includes(value) ? operatorClicked : false
+        operators.includes(value) ? operatorClicked
+        : value === '.' ? decimalClicked 
+        : buttonsToFix.includes(value) ? true
+        : false
       }
     >
       {value}
