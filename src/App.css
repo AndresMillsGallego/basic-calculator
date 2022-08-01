@@ -1,7 +1,7 @@
 .App {
   height: 100vh;
   text-align: center;
-  background-color: azure;
+  background-color:#61dafb;
   padding: 2rem;
 }
 
@@ -72,10 +72,6 @@ input {
   padding: 5px;
 }
 
-.button-row:first-child {
-  margin-top: 1.5rem;
-}
-
 .button-row {
   margin-bottom: 1rem;
 }
@@ -87,7 +83,16 @@ input {
 footer {
   display: flex;
   justify-content: space-around;
-  align-content: center;
+  align-items: center;
   border-top: 3px double crimson;
   padding-top: 1rem;
+  font-size: 1.25rem;
+}
+
+.footer-links {
+  font-size: 2rem;
+}
+
+.footer-links:hover {
+  color: gold;
 }
