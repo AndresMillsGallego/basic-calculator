@@ -17,6 +17,7 @@ function Main() {
   const [buttonValue, setButtonValue] = useState(['0']);
   const [isAnswered, setIsAnswered] = useState(false);
   const [operatorClicked, setOperatorClicked] = useState(false);
+  const [decimalClicked, setDecimalClicked] = useState(false);
 
   return (
     <>
@@ -51,6 +52,8 @@ function Main() {
                           setIsAnswered={setIsAnswered}
                           operatorClicked={operatorClicked}
                           setOperatorClicked={setOperatorClicked}
+                          decimalClicked={decimalClicked}
+                          setDecimalClicked={setDecimalClicked}
                         />
                       </Col>
                     );
