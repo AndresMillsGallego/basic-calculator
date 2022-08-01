@@ -1,9 +1,16 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+
 function Footer() {
   return (
     <footer>
-      <a href="https://github.com/AndresMillsGallego">GitHub</a>
+      <a title="My Github" href="https://github.com/AndresMillsGallego">
+        <FontAwesomeIcon icon={faGithub} color='yellow' className="footer-links" />
+      </a>
       <p>&copy; Andres Mills Gallego</p>
-      <a href="https://www.linkedin.com/in/andres-mills-gallego/">LinkedIn</a>
+      <a title="My LinkedIn" href="https://www.linkedin.com/in/andres-mills-gallego/">
+        <FontAwesomeIcon icon={faLinkedin} color='yellow' className="footer-links"/>
+      </a>
     </footer>
   );
 }

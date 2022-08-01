@@ -5,6 +5,7 @@ import CalcButton from './CalcButton';
 import Results from './Results';
 
 const calcValues = [
+  {row: ['.', '(', ')', 'M']},
   { row: [7, 8, 9, '-'] },
   { row: [4, 5, 6, '+'] },
   { row: [1, 2, 3, '*'] },
@@ -37,10 +38,12 @@ function Main() {
                 {
                   obj.row.map((button, index) => {
                     return (
-                      <Col xs sm md lg={3}>
+                      <Col 
+                        xs sm md lg={3}
+                        key={index}
+                      >
                         <CalcButton
                           className='buttons'
-                          key={index}
                           value={button}
                           setButtonValue={setButtonValue}
                           buttonValue={buttonValue}
