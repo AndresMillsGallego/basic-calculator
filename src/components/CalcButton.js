@@ -42,11 +42,15 @@ function CalcButton({value, buttonValue, setButtonValue, isAnswered, setIsAnswer
       setButtonValue(value.toString());
       setIsAnswered(false);
       setOperatorClicked(false);
+      if (value === '.') {
+        setDecimalClicked(true);
+      }
       return;
     }
     if (value === '.') {
       setButtonValue([...buttonValue, value]);
       setDecimalClicked(true);
+      return;
     }
     if (buttonValue[0] === '0' && buttonValue.length <=1) {
       if (typeof(value) !== 'number') {
@@ -58,6 +62,7 @@ function CalcButton({value, buttonValue, setButtonValue, isAnswered, setIsAnswer
     } else if (operators.includes(value)) {
       setButtonValue([...buttonValue, value.toString()]);
       setOperatorClicked(true);
+      setDecimalClicked(false);
     } else if (value === '=') {
       calculate();
       setIsAnswered(true);
@@ -66,6 +71,7 @@ function CalcButton({value, buttonValue, setButtonValue, isAnswered, setIsAnswer
       setButtonValue([...buttonValue, value.toString()]);
     }
   }
+  
   return (
     <Button 
       className='button'
